@@ -12,7 +12,7 @@ class ShapeView: UIView {
 
     let btnWidth: CGFloat = 60*PROPORTION_BASIC6P
     let btnHorSpace = (WIDTH-60*PROPORTION_BASIC6P*4)/5
-    let btnImgArray = ["btn-love", "btn-baidu"]
+    let btnImgArray = ["btn-bai","btn-love", "btn-baidu"]
     
     var imgVBgV = UIView()
     var lastBtn = UIButton()
@@ -33,7 +33,7 @@ class ShapeView: UIView {
     private func initBottomView() {
         let btnVerSpace: CGFloat = (frame.height-btnWidth*3)/4
         for i in 0...0 {
-            for j in 0...1 {
+            for j in 0..<btnImgArray.count {
                 let btn = UIButton.init(frame: CGRectMake(btnHorSpace+(btnWidth+btnHorSpace)*CGFloat(j), btnVerSpace+(btnWidth+btnVerSpace)*CGFloat(i), btnWidth, btnWidth))
                 btn.setBackgroundImage(UIImage.init(named: btnImgArray[i*4+j]), forState: .Normal)
                 btn.tag = i*4+j
