@@ -54,7 +54,7 @@ class ShapeView: UIView {
         lastBtn = btn
         
         shapeImg = UIImage(named: "shape-\(btn.tag)")
-        imgArray = saveImg.separateImageAndDescripetionAndShape(byX: 3, andY: 3, descripetion: text, shapeImage: shapeImg, textColor: textColor)!
+        imgArray = saveImg.separateImageAndDescripetionAndShape(byX: 3, andY: 3, descripetion: nil, shapeImage: shapeImg, textColor: textColor)!
         for i in 0..<imgVBgV.subviews.count {
             (imgVBgV.viewWithTag(100+i) as! UIImageView).image = imgArray[i]
         }

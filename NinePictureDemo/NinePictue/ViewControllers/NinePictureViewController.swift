@@ -51,6 +51,21 @@ class NinePictureViewController: UIViewController {
         UIGraphicsEndImageContext()
         imgArray.append(viewImg)
         
+        var aImgArray = [UIImage]()
+        let watermark = UIImage(named: "watermark")!
+        let asize = watermark.size
+        let imgRect = CGRectMake(0, 0, asize.width, asize.height)
+        for img in imgArray {
+            UIGraphicsBeginImageContext(imgRect.size)
+            watermark.drawInRect(imgRect)
+            img.drawInRect(CGRectMake(0, (asize.height-asize.width)/2, asize.width, asize.width))
+            let elementImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            aImgArray.append(elementImage)
+            imgArray.removeAtIndex(0)
+        }
+        
+        imgArray = aImgArray
         savePictureNext()
     }
     
