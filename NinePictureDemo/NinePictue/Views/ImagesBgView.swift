@@ -11,8 +11,7 @@ import UIKit
 let imgVSpace: CGFloat = 5
 let imgVleft: CGFloat = 45*PROPORTION_BASIC6P
 let imgVWidth: CGFloat = (WIDTH-45*PROPORTION_BASIC6P*2-5*2)/3
-let color = UIColor.init(red: CGFloat(arc4random()%256)/255.0, green: CGFloat(arc4random()%256)/255.0, blue: CGFloat(arc4random()%256)/255.0, alpha: 1)
-
+let color = UIColor.whiteColor()
 class ImagesBgView: UIView {
     
     var imgVBgVH = NSLayoutConstraint()

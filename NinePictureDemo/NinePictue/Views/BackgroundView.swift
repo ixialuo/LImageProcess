@@ -44,6 +44,8 @@ class BackgroundView: UIView, UIImagePickerControllerDelegate, UINavigationContr
                     lastBtn.layer.cornerRadius = 3
                     lastBtn.layer.borderColor = UIColor.init(rgba: "#666666").CGColor
                     lastBtn.layer.borderWidth = 2
+                } else if i==0 && j==2 {
+                    btn.backgroundColor = UIColor.blackColor()
                 } else {
                     btn.backgroundColor = UIColor.init(red: CGFloat(arc4random()%256)/255.0, green: CGFloat(arc4random()%256)/255.0, blue: CGFloat(arc4random()%256)/255.0, alpha: 1)
                 }

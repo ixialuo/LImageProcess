@@ -61,13 +61,19 @@ class WordView: UIView {
         for i in 0...1 {
             for j in 0...5 {
                 let btn = UIButton.init(frame: CGRectMake(btnLeft+(btnWidth+btnHorSpace)*CGFloat(j), tfTop+tfBgVHeight+btnTop+(btnWidth+btnVerSpace)*CGFloat(i), btnWidth, btnWidth))
-                btn.backgroundColor = UIColor.init(red: CGFloat(arc4random()%256)/255.0, green: CGFloat(arc4random()%256)/255.0, blue: CGFloat(arc4random()%256)/255.0, alpha: 1)
+                
                 if i==0 && j==0 {
+                    btn.backgroundColor = UIColor.whiteColor()
                     lastBtn = btn
                     lastBtn.layer.cornerRadius = 3
                     lastBtn.layer.borderColor = UIColor.init(rgba: "#666666").CGColor
                     lastBtn.layer.borderWidth = 2
+                } else if i==0 && j==1 {
+                    btn.backgroundColor = UIColor.blackColor()
+                } else {
+                    btn.backgroundColor = UIColor.init(red: CGFloat(arc4random()%256)/255.0, green: CGFloat(arc4random()%256)/255.0, blue: CGFloat(arc4random()%256)/255.0, alpha: 1)
                 }
+                
                 btn.tag = i*6+j
                 btn.addTarget(self, action: #selector(WordView.colorBtnsAction(_:)), forControlEvents: .TouchUpInside)
                 addSubview(btn)
@@ -85,6 +91,8 @@ class WordView: UIView {
         btn.layer.borderColor = UIColor.init(rgba: "#666666").CGColor
         btn.layer.borderWidth = 2
         lastBtn = btn
+        
+        productBtnBtnAction(btn)
     }
     
     //MARK: - 生成按钮的方法

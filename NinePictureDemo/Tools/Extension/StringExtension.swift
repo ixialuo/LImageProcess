@@ -11,8 +11,8 @@ import UIKit
 extension String {
 
     //MARK: - 根据image大小计算字体的大小
-    func calculateFontWithImageSize(size: CGSize) -> UIFont {
-        var font = UIFont.systemFontOfSize(0)
+    func calculateFontWithImageSize(bold: Bool = false, size: CGSize) -> UIFont {
+        var font = bold ? UIFont.boldSystemFontOfSize(0) : UIFont.systemFontOfSize(0)
         var cFont = font.pointSize
         var textSize = (self as NSString).sizeWithAttributes([NSFontAttributeName: font])
         repeat {
@@ -20,7 +20,7 @@ extension String {
             font = UIFont.systemFontOfSize(cFont)
             textSize = (self as NSString).sizeWithAttributes([NSFontAttributeName: font])
         } while textSize.width <= size.width && textSize.height <= size.height
-        font = UIFont.systemFontOfSize(cFont-1)
+        font = bold ? UIFont.boldSystemFontOfSize(cFont-1) : UIFont.systemFontOfSize(cFont-1)
         return font
     }
     

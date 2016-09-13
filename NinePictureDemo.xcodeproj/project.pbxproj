@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE43B4431D880E28008B519F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = CE43B4421D880E28008B519F /* Icon.png */; };
 		CE86AFEC1D8145E800664816 /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE86AFEB1D8145E800664816 /* ShapeView.swift */; };
 		CEFB53B91D72F76A003C2DDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFB53B71D72F76A003C2DDA /* Main.storyboard */; };
 		CEFB53BB1D72F76A003C2DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFB53BA1D72F76A003C2DDA /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE43B4421D880E28008B519F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		CE86AFEB1D8145E800664816 /* ShapeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
 		CEFB53B01D72F76A003C2DDA /* NinePictureDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NinePictureDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFB53B81D72F76A003C2DDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 		CEFB53A71D72F76A003C2DDA = {
 			isa = PBXGroup;
 			children = (
+				CE43B4421D880E28008B519F /* Icon.png */,
 				CEFB53B21D72F76A003C2DDA /* NinePictureDemo */,
 				CEFB53C71D72F76A003C2DDA /* NinePictureDemoTests */,
 				CEFB53D21D72F76A003C2DDA /* NinePictureDemoUITests */,
@@ -354,6 +357,7 @@
 				TargetAttributes = {
 					CEFB53AF1D72F76A003C2DDA = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 6X2HSWDZCR;
 					};
 					CEFB53C31D72F76A003C2DDA = {
 						CreatedOnToolsVersion = 7.3;
@@ -390,6 +394,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE43B4431D880E28008B519F /* Icon.png in Resources */,
 				CEFB53BE1D72F76A003C2DDA /* LaunchScreen.storyboard in Resources */,
 				CEFB53BB1D72F76A003C2DDA /* Assets.xcassets in Resources */,
 				CEFB53B91D72F76A003C2DDA /* Main.storyboard in Resources */,
@@ -582,11 +587,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Gravity Cyberinfo Co.,Ltd (6X2HSWDZCR)";
 				INFOPLIST_FILE = NinePictureDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codans.NinePictureDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9d3a8612-d7de-428e-9d8f-97fd88882ced";
+				PROVISIONING_PROFILE = "de7735b3-90bb-47f0-8452-31c070f8ed48";
 				SWIFT_OBJC_BRIDGING_HEADER = "NinePictureDemo/Main/NinePictureDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -597,11 +603,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Gravity Cyberinfo Co.,Ltd (6X2HSWDZCR)";
 				INFOPLIST_FILE = NinePictureDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codans.NinePictureDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9d3a8612-d7de-428e-9d8f-97fd88882ced";
+				PROVISIONING_PROFILE = "de7735b3-90bb-47f0-8452-31c070f8ed48";
 				SWIFT_OBJC_BRIDGING_HEADER = "NinePictureDemo/Main/NinePictureDemo-Bridging-Header.h";
 			};
 			name = Release;

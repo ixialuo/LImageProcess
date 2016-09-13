@@ -73,7 +73,8 @@ extension UIImage {
                             let _x = (imgRect.width - avatarSize.width)*0.5
                             let _y = (imgRect.height - avatarSize.height)*0.5
                             //设置绘制文字的font，根据需要绘制的区域计算出合理的font
-                            let font = character.calculateFontWithImageSize(avatarSize.size)
+                            let font = character.calculateFontWithImageSize(true, size: avatarSize.size)
+                            
                             //设置文字绘制的属性
                             let style = NSMutableParagraphStyle()
                             style.alignment = .Center
@@ -147,13 +148,19 @@ extension UIImage {
                             let _x = (imgRect.width - avatarSize.width)*0.5
                             let _y = (imgRect.height - avatarSize.height)*0.5
                             //设置绘制文字的font，根据需要绘制的区域计算出合理的font
-                            let font = character.calculateFontWithImageSize(avatarSize.size)
+                            let font = character.calculateFontWithImageSize(false, size: avatarSize.size)
+                            
                             //设置文字绘制的属性
                             let style = NSMutableParagraphStyle()
                             style.alignment = .Center
                             
+                            let shadow = NSShadow()
+                            shadow.shadowBlurRadius = 5
+                            shadow.shadowColor = color
+                            shadow.shadowOffset = CGSizeMake(1, 3)
+                            
                             if let _color = color {
-                                (character as NSString).drawInRect(CGRectMake(_x, _y, avatarSize.width, avatarSize.height), withAttributes: [NSFontAttributeName: font, NSForegroundColorAttributeName: _color, NSParagraphStyleAttributeName: style])
+                                (character as NSString).drawInRect(CGRectMake(_x, _y, avatarSize.width, avatarSize.height), withAttributes: [NSFontAttributeName: font, NSShadowAttributeName: shadow, NSVerticalGlyphFormAttributeName: 0,NSForegroundColorAttributeName: _color, NSParagraphStyleAttributeName: style])
                             } else {
                                 (character as NSString).drawInRect(CGRectMake(_x, _y, avatarSize.width, avatarSize.height), withAttributes: [NSFontAttributeName: font, NSForegroundColorAttributeName: UIColor.whiteColor(), NSParagraphStyleAttributeName: style])
                             }
