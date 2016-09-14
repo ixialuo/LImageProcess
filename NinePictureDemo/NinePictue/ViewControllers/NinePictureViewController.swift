@@ -13,6 +13,7 @@ var saveImg = UIImage()
 var text: String?
 var textColor: UIColor?
 var shapeImg: UIImage?
+var picScale: CGFloat = 0.5
 
 class NinePictureViewController: UIViewController {
 
@@ -24,7 +25,11 @@ class NinePictureViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        automaticallyAdjustsScrollViewInsets = false
+        //添加调节文字的大小的输入框
+        let tap = UITapGestureRecognizer(target: self, action: #selector(NinePictureViewController.tapAction))
+        tap.numberOfTapsRequired = 4
+        tap.numberOfTouchesRequired = 1
+        view.addGestureRecognizer(tap)
 
         imgVBgV.addSubview(imagesBgView)
     }
@@ -142,6 +147,34 @@ class NinePictureViewController: UIViewController {
         savePictureNext()
     }
 
+    
+    func tapAction() {
+        let alertVc = UIAlertController(title: "九格切图", message: "请输入文字所占的百分比", preferredStyle: .Alert)
+        alertVc.addTextFieldWithConfigurationHandler { (textFiled) in
+            textFiled.placeholder = "请输入50~100间的整数"
+        }
+        let cancelAction = UIAlertAction(title: "取消", style: .Cancel, handler: nil)
+        alertVc.addAction(cancelAction)
+        let certainAction = UIAlertAction(title: "确定", style: .Destructive) { (action) in
+            let textTf = (alertVc.textFields?.first)! as UITextField
+            guard Double(textTf.text!) >= 50.0 && Double(textTf.text!) <= 100.0 else {
+                let alert = UIAlertController.init(title: "", message: "请输入合理的整数", preferredStyle: .Alert)
+                self.presentViewController(alert, animated: true, completion: {
+                    gDelay(time: 1, task: {
+                        alert.dismissViewControllerAnimated(true, completion: nil)
+                    })
+                })
+                return
+            }
+            picScale = CGFloat(Double(textTf.text!)!/100)
+            imgArray = saveImg.separateImageAndDescripetionAndShape(byX: 3, andY: 3, descripetion: text, shapeImage: shapeImg, textColor: textColor)!
+            for i in 0..<self.imagesBgView.subviews.count {
+                (self.imgVBgV.viewWithTag(100+i) as! UIImageView).image = imgArray[i]
+            }
+        }
+        alertVc.addAction(certainAction)
+        presentViewController(alertVc, animated: true, completion: nil)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

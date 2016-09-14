@@ -592,7 +592,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codans.NinePictureDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "de7735b3-90bb-47f0-8452-31c070f8ed48";
+				PROVISIONING_PROFILE = "9d3a8612-d7de-428e-9d8f-97fd88882ced";
 				SWIFT_OBJC_BRIDGING_HEADER = "NinePictureDemo/Main/NinePictureDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -608,7 +608,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.codans.NinePictureDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "de7735b3-90bb-47f0-8452-31c070f8ed48";
+				PROVISIONING_PROFILE = "9d3a8612-d7de-428e-9d8f-97fd88882ced";
 				SWIFT_OBJC_BRIDGING_HEADER = "NinePictureDemo/Main/NinePictureDemo-Bridging-Header.h";
 			};
 			name = Release;

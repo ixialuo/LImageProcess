@@ -144,7 +144,7 @@ extension UIImage {
                             let endIndex = des.startIndex.advancedBy(i*y+j+1)
                             let character = des.substringWithRange( Range<String.Index> (startIndex..<endIndex))
                             //设置文字绘制的区域
-                            let avatarSize = CGRectMake(0, 0, _xstep*0.5, _ystep*0.5)
+                            let avatarSize = CGRectMake(0, 0, _xstep*picScale, _ystep*picScale)
                             let _x = (imgRect.width - avatarSize.width)*0.5
                             let _y = (imgRect.height - avatarSize.height)*0.5
                             //设置绘制文字的font，根据需要绘制的区域计算出合理的font
